@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>S.S. Dev Public School | Unified Pro Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="zoom-overlay" id="zoomOverlay" onclick="closeZoom()">
+        <img id="zoomedImg" src="" alt="Zoomed View">
+    </div>
+
+    <div class="action-stack">
+        <div class="lang-btn" onclick="toggleLang()" id="langBtn">हिन्दी</div>
+    </div>
+
+    <!-- header section -->
+    <header class="app-header">
+        <div class="school-info">
+            <div class="school-logo">
+                <img src="/assets/logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+                <h2 style="margin: 0; font-size: 15px; color: var(--primary);">S.S. Dev Public School</h2>
+                <p style="margin: 0; font-size: 8px; color: #64748b; font-weight: 600;">HETIMPUR • ZAMANIA • UP</p>
+            </div>
+        </div>
+        <div class="login-trigger" onclick="openM('portalModal')">👤</div>
+    </header>
+
+    <!-- hero section -->
+    <section class="hero">
+        <div class="quote-box">
+            <h1 class="quote active" data-en="Welcome to S.S. Dev Public School"
+                data-hi="एस.एस. देव पब्लिक स्कूल में आपका स्वागत है">Welcome to S.S. Dev Public School</h1>
+            <h1 class="quote" data-en="Empowering Minds, Shaping Future"
+                data-hi="मस्तिष्क को सशक्त बनाना, भविष्य को संवारना">Empowering Minds, Shaping Future</h1>
+            <h1 class="quote" data-en="Innovation in Every Classroom" data-hi="हर कक्षा में नवाचार">Innovation in Every
+                Classroom</h1>
+            <h1 class="quote" data-en="Excellence through Integrity" data-hi="ईमानदारी के माध्यम से उत्कृष्टता">
+                Excellence through Integrity</h1>
+        </div>
+        <button class="btn-p" style="width: fit-content; padding: 10px 20px;"
+            onclick="openInfo('About School', 'S.S. Dev Public School has been a symbol of excellence in Ghazipur since 1990. We focus on holistic development, academic rigor, and creative thinking.')">
+            <span class="text-node" data-en="Read More About Us" data-hi="हमारे बारे में और जानें">Read More About
+                Us</span>
+        </button>
+        <img src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png"
+            style="position: absolute; right: -15px; bottom: 0; height: 130px; opacity: 0.9;">
+    </section>
+
+    <!-- mission & vision -->
+    <h3 style="padding-left: 25px;" class="text-node" data-en="Mission & Vision" data-hi="मिशन और विजन">Mission & Vision
+    </h3>
+    <div class="blur-wrapper">
+        <div class="h-scroll">
+            <div class="glass-card" style="border-left: 6px solid var(--accent);"
+                onclick="openInfo('Our Mission', 'To ignite a passion for lifelong learning and provide a nurturing environment where every child can excel.')">
+                <h4 style="color: var(--accent);" class="text-node" data-en="Our Mission" data-hi="हमारा मिशन">Our
+                    Mission</h4>
+                <p style="font-size: 12px; color: #4b5563;" class="text-node"
+                    data-en="To ignite a passion for lifelong learning."
+                    data-hi="आजीवन सीखने के प्रति जुनून पैदा करना।">To ignite a passion for lifelong learning.</p>
+            </div>
+            <div class="glass-card" style="border-left: 6px solid var(--orange);"
+                onclick="openInfo('Our Vision', 'Building a smarter, kinder global community by developing leadership and critical thinking in students.')">
+                <h4 style="color: var(--orange);" class="text-node" data-en="Our Vision" data-hi="हमारा दृष्टिकोण">Our
+                    Vision</h4>
+                <p style="font-size: 12px; color: #4b5563;" class="text-node"
+                    data-en="Building a smarter, kinder global community."
+                    data-hi="एक स्मार्ट और दयालु वैश्विक समुदाय का निर्माण।">Building a smarter, kinder global
+                    community.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- about section -->
+    <h3 style="padding-left: 25px;" class="section-title text-node" id="sch-about"
+        data-en="About Our School" data-hi="हमारे स्कूल के बारे में">About Our School</h3>
+    <div class="contact-card" 
+        <div class="contact-card"
+            style="margin: 15px 20px 30px; background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); padding: 25px; border-radius: 30px; border: 1px solid white; box-shadow: var(--shadow);">
+            <p class="text-node" style="font-size: 13px; color: #4b5563; line-height: 1.8;"
+                data-en="S.S. Dev Public School, established in 1990, is dedicated to academic excellence. Located in Hetimpur, Zamania, we blend modern technology with traditional values to nurture every child's potential."
+                data-hi="1990 में स्थापित एस.एस. देव पब्लिक स्कूल, शैक्षणिक उत्कृष्टता के लिए समर्पित है। हेतिमपुर, जमानिया में स्थित, हम हर बच्चे की क्षमता को निखारने के लिए आधुनिक तकनीक को पारंपरिक मूल्यों के साथ मिलाते हैं।">
+                S.S. Dev Public School, established in 1990, is dedicated to academic excellence...
+            </p>
+        </div>
+    </div>
+    <!-- School Management -->
+    <h3 style="padding-left: 25px;" class="section-title text-node" data-en="School Management" data-hi="स्कूल प्रबंधन">
+        School Management</h3>
+    <div class="blur-wrapper">
+        <div class="h-scroll">
+            <div class="glass-card teacher-card"
+                onclick="openBio('Chairman Sir', 'Honorable Chairman', 'Visionary leader of S.S. Dev Public School.', 'chairman@school.com')">
+                <div class="teacher-img-box" style="border-color: #FFD700;"><img
+                        src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png"></div>
+                <h5 class="teacher-name">Chairman Sir</h5>
+                <p class="teacher-post">Chairman</p>
+                <button class="msg-btn">Message</button>
+            </div>
+
+            <div class="glass-card teacher-card"
+                onclick="openBio('Manager Sir', 'School Manager', 'Overseeing growth and infrastructure.', 'manager@school.com')">
+                <div class="teacher-img-box" style="border-color: var(--orange);"><img
+                        src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png"></div>
+                <h5 class="teacher-name">Manager Sir</h5>
+                <p class="teacher-post">Manager</p>
+                <button class="msg-btn">Message</button>
+            </div>
+
+            <div class="glass-card teacher-card"
+                onclick="openBio('Sunita Kushwaha', 'Principal | M.A, B.Ed', '19+ Years of teaching and administrative excellence.', 'sunita@school.com')">
+                <div class="teacher-img-box"><img src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png">
+                </div>
+                <h5 class="teacher-name">Sunita Kushwaha</h5>
+                <p class="teacher-post">Principal</p>
+                <button class="msg-btn">Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- our facilities -->
+    <h3 style="padding-left: 25px;" id="sch-facility" class="section-title text-node" data-en="Our Facilities"
+        data-hi="हमारी सुविधाएं">
+        Our Facilities</h3>
+    <div class="grid">
+        <div class="tile"
+            onclick="openInfo('Smart Class', 'Equipped with modern interactive boards and digital multimedia content.')">
+            <i>📺</i><span class="text-node" data-en="Smart Class" data-hi="स्मार्ट क्लास">Smart Class</span>
+        </div>
+        <div class="tile"
+            onclick="openInfo('Science Lab', 'Fully equipped physics, chemistry, and biology labs for practical experiments.')">
+            <i>🧪</i><span class="text-node" data-en="Science Lab" data-hi="विज्ञान लैब">Science Lab</span>
+        </div>
+        <div class="tile"
+            onclick="openInfo('Digital Lab', 'High-speed computers with the latest software and internet connectivity.')">
+            <i>💻</i><span class="text-node" data-en="Digital Lab" data-hi="डिजिटल लैब">Digital Lab</span>
+        </div>
+        <div class="tile"
+            onclick="openInfo('Safe Transit', 'Safe bus facility with CCTV and GPS monitoring covering 20km radius.')">
+            <i>🚌</i><span class="text-node" data-en="Safe Transit" data-hi="परिवहन">Safe Transit</span>
+        </div>
+    </div>
+
+    <!-- faculties section -->
+    <h3 style="padding-left: 25px;" class="section-title text-node" data-en="Our Experienced Faculty"
+        data-hi="हमारे अनुभवी शिक्षक">Our Experienced Faculty</h3>
+    <div class="blur-wrapper">
+        <div class="h-scroll">
+            <div class="glass-card teacher-card"
+                onclick="openBio('Sunita Kushwaha', 'Principal | M.A, B.Ed | 19+ Years Exp.', 'Mrs. Sunita Kushwaha leads the institution with 10 years of teaching and 9 years of administrative excellence. She is dedicated to holistic student growth and academic discipline.')">
+                <div class="teacher-img-box" style="border-color: #FFD700;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png" alt="Principal">
+                </div>
+                <h5 class="teacher-name">Sunita Kushwaha</h5>
+                <p class="teacher-post text-node" data-en="Principal" data-hi="प्रधानाचार्य">Principal</p>
+                <div class="rating-stars">⭐ 4.9 (150+ Reviews)</div>
+            </div>
+
+            <div class="glass-card teacher-card"
+                onclick="openBio('Mr. R.K. Maurya', 'Senior Mathematics Teacher | M.Sc | 12+ Years Exp.', 'Expert in Vedic Maths and competitive coaching. Helping students master complex calculations with simple logic.')">
+                <div class="teacher-img-box" style="border-color: var(--orange);">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png" alt="Teacher">
+                </div>
+                <h5 class="teacher-name">Mr. R.K. Maurya</h5>
+                <p class="teacher-post text-node" data-en="Mathematics HOD" data-hi="गणित विभागाध्यक्ष">Mathematics
+                    HOD
+                </p>
+                <div class="rating-stars">⭐ 4.8 (95+ Reviews)</div>
+            </div>
+
+            <div class="glass-card teacher-card"
+                onclick="openBio('Ms. Anita Singh', 'English & Humanities | M.A (Eng) | 8+ Years Exp.', 'Passionate about literature and personality development. Focused on improving communication skills and confidence in students.')">
+                <div class="teacher-img-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3429/3429433.png" alt="Teacher">
+                </div>
+                <h5 class="teacher-name">Ms. Anita Singh</h5>
+                <p class="teacher-post text-node" data-en="English Faculty" data-hi="अंग्रेजी शिक्षिका">English
+                    Faculty
+                </p>
+                <div class="rating-stars">⭐ 4.7 (80+ Reviews)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification section-->
+    <h3 style="padding-left: 25px;" class="text-node" data-en="Notifications" data-hi="सूचनाएं">Notification</h3>
+    <div class="blur-wrapper">
+        <div class="h-scroll">
+            <div class="glass-card" style="border-left: 6px solid var(--green);"
+                onclick="openInfo('PTM', 'Parent Teacher Meeting scheduled for this Sunday at 10:00 AM.')">
+                <h4 style="color: var(--green);" class="text-node" data-en="PTM Meeting" data-hi="अभिभावक बैठक">
+                    Parent
+                    Teacher Meeting</h4>
+                <p style="font-size: 11px; color: #4b5563;">Click to read schedule.</p>
+            </div>
+            <div class="glass-card" style="border-left: 6px solid var(--accent);"
+                onclick="openInfo('Admission', 'Admission forms for the new session 2026-27 are now available at the office.')">
+                <h4 style="color: var(--accent);" class="text-node" data-en="Admission Open" data-hi="प्रवेश प्रारंभ">
+                    Admission Open</h4>
+                <p style="font-size: 11px; color: #4b5563;">New session registration started.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- school event -->
+    <h3 style="padding-left: 25px;" id="#sch-gallary" class="text-node" data-en="School Events" data-hi="स्कूल के कार्यक्रम">School
+        Events
+    </h3>
+    <div class="blur-wrapper">
+        <div class="h-scroll">
+            <div class="glass-card event-card" onclick="zoomImg(this)">
+                <img src="/assets/event-1.jfif" alt="Event" class="event-img"
+                    onerror="this.src='https:images.unsplash.com/photo-1523580494863-6f30312248f5?auto=format&fit=crop&w=500'">
+                <h5 class="text-node" data-en="Annual Fest" data-hi="वार्षिक उत्सव">Annual Fest</h5>
+            </div>
+            <div class="glass-card event-card" onclick="zoomImg(this)">
+                <img src="/assets/event-2.jfif" alt="Event" class="event-img"
+                    onerror="this.src='https:images.unsplash.com/photo-1523580494863-6f30312248f5?auto=format&fit=crop&w=500'">
+                <h5 class="text-node" data-en="Annual Fest" data-hi="वार्षिक उत्सव">Annual Sports</h5>
+            </div>
+            <div class="glass-card event-card" onclick="zoomImg(this)">
+                <img src="/assets/event-3.jfif" alt="Event" class="event-img"
+                    onerror="this.src='https:images.unsplash.com/photo-1523580494863-6f30312248f5?auto=format&fit=crop&w=500'">
+                <h5 class="text-node" data-en="Annual Fest" data-hi="वार्षिक उत्सव">Sports Day</h5>
+            </div>
+            <div class="glass-card event-card" onclick="zoomImg(this)">
+                <img src="/assets/event-4.jfif" alt="Event" class="event-img"
+                    onerror="this.src='https:images.unsplash.com/photo-1523580494863-6f30312248f5?auto=format&fit=crop&w=500'">
+                <h5 class="text-node" data-en="Annual Fest" data-hi="वार्षिक उत्सव">Creative</h5>
+            </div>
+            <div class="glass-card event-card" onclick="zoomImg(this)">
+                <img src="/assets/event-5.jfif" alt="Event" class="event-img"
+                    onerror="this.src='https:images.unsplash.com/photo-1523580494863-6f30312248f5?auto=format&fit=crop&w=500'">
+                <h5 class="text-node" data-en="Annual Fest" data-hi="वार्षिक उत्सव">Out Door Activities</h5>
+            </div>
+            <div class="glass-card event-card" onclick="zoomImg(this)">
+                <img src="event2.jpg" alt="Event" class="event-img"
+                    onerror="this.src='https:images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=500'">
+                <h5 class="text-node" data-en="Sports Day" data-hi="खेल दिवस">Sports Day</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact section -->
+    <h3 style="padding-left: 25px;" id="#sch-contact" class="section-title text-node" data-en="Contact Us" data-hi="संपर्क करें">
+        Contact
+        Us</h3>
+    <div class="glass-contact-container">
+        <div class="main-glass-form">
+            <h4 class="text-node" data-en="Send us a Message" data-hi="हमें संदेश भेजें">Send us a Message</h4>
+
+            <div class="input-row">
+                <input type="text" class="glass-input" placeholder="Your Name" id="senderName">
+                <input type="tel" class="glass-input" placeholder="Mobile Number" id="senderPhone">
+            </div>
+
+            <select class="glass-input" id="subject">
+                <option value="">Select Subject</option>
+                <option value="Admission">Admission Enquiry</option>
+                <option value="General">General Inquiry</option>
+                <option value="Complaint">Feedback/Complaint</option>
+            </select>
+
+            <textarea class="glass-input" rows="4" placeholder="Write your message here..." id="messageBody"></textarea>
+
+            <button class="glass-submit-btn" onclick="sendMessage()">
+                <span class="text-node" data-en="Submit Now" data-hi="अभी भेजें">Submit Now</span>
+                <i>🚀</i>
+            </button>
+        </div>
+
+        <div class="mini-contact-strip">
+            <div class="mini-glass-card" onclick="window.location.href='tel:+919876543210'">
+                <div class="mini-icon">📞</div>
+                <p>Call Us</p>
+            </div>
+            <div class="mini-glass-card" onclick="openM('mapModal')">
+                <div class="mini-icon">📍</div>
+                <p>Map</p>
+            </div>
+            <div class="mini-glass-card" onclick="window.location.href='mailto:info@ssdev.com'">
+                <div class="mini-icon">📧</div>
+                <p>Email</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer-info">
+        <div style="display: flex; flex-direction: column; gap: 25px;">
+            <div>
+                <h3 style="color: white; margin: 0;">S.S. Dev Public School</h3>
+                <p style="font-size: 11px; opacity: 0.7;" class="text-node" data-en="Excellence since 1990."
+                    data-hi="1990 से उत्कृष्टता।">Excellence since 1990.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--orange);" class="text-node" data-en="Quick Links" data-hi="त्वरित लिंक">
+                    Quick
+                    Links</h4>
+                <div class="quick-link-grid">
+                    <a href="#" onclick="window.scrollTo(0,0)">Home</a>
+                    <a href="#sch-about" onclick="openM('aboutModal')">About Us</a>
+                    <a href="#" onclick="openM('enquiryModal')">Admission</a>
+                    <a href="#sch-facility" onclick="openM('facilityModal')">Facilities</a>
+                    <a href="#sch-gallary" onclick="openM('gallarytModal')">Gallary</a>
+                    <a href="#sch-contact" onclick="openM('contactModal')">Contact Us</a>
+                    <!-- developer card -->
+                    <div class="footer-link-item dev-highlight" onclick="openM('devModal')">
+                        <span class="link-icon">💻</span>
+                        <span class="link-text">Developer</span>
+                    </div>
+                    <!-- social mediya card -->
+                    <div class="footer-link-item social-link-card" onclick="openM('socialModal')">
+                        <span class="link-icon">🌐</span>
+                        <span class="link-text">Social Media</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="enquiry-footer-btn" onclick="openM('enquiryModal')">
+                <span class="text-node" data-en="ADMISSION ENQUIRY 2026" data-hi="प्रवेश पूछताछ 2026">ADMISSION
+                    ENQUIRY
+                    2026</span>
+            </button>
+            <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                <p style="font-size: 9px; opacity: 0.5;">© 2026 S.S. Dev Public School | Designed by @ar_maurya</p>
+            </div>
+        </div>
+
+        <!-- google map card -->
+        <div class="modal-overlay" id="mapModal" onclick="closeM('mapModal')">
+            <div class="modal-box" onclick="event.stopPropagation()">
+                <div class="handle"></div>
+                <h2 style="color:var(--primary); font-size: 18px; margin-bottom: 10px;">Our School Location</h2>
+                <div class="map-frame"
+                    style="width:100%; overflow:hidden; border-radius:15px; box-shadow: var(--shadow);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.810531234567!2d83.56789012345678!3d25.41234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI0JzQ0LjQiTiA4M8KwMzQnMDQuNCJF!5e0!3m2!1sen!2sin!4v1710560000000!5m2!1sen!2sin"
+                        width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p style="font-size: 11px; color: #64748b; margin-top: 10px; text-align: center;">
+                    📍 Hetimpur, Zamania, Ghazipur, Uttar Pradesh
+                </p>
+                <button class="btn-p"
+                    style="margin-top:15px; background:#f1f5f9; color:#1e293b; border: 1px solid #e2e8f0;"
+                    onclick="closeM('mapModal')">Close Map</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- login portalcard -->
+    <div class="modal-overlay" id="portalModal" onclick="closeM('portalModal')">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <div class="handle"></div>
+            <div id="selectionMenu">
+                <h2>Access Portal</h2>
+                <div class="tile-list" onclick="showL('Admin')"><i>🔐</i> Admin Portal</div>
+                <div class="tile-list" onclick="showL('Teacher')"><i>👨‍🏫</i> Teacher Login</div>
+                <div class="tile-list" onclick="showL('Student')"><i>🎓</i> Student Login</div>
+                <button class="btn-p" style="background:#eee; color:#333; margin-top:10px;"
+                    onclick="closeM('portalModal')">Cancel</button>
+            </div>
+            <div id="loginForm" style="display: none;">
+                <div onclick="resetSelection()"
+                    style="color:var(--accent); font-weight:700; cursor:pointer; margin-bottom:10px;">← Back</div>
+                <h2 id="lTitle">Login</h2>
+                <input type="text" class="input-f" id="uId" placeholder="ID">
+                <input type="password" class="input-f" placeholder="Password">
+                <button class="btn-p">Login Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="infoModal" onclick="closeM('infoModal')">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <div class="handle"></div>
+            <h2 id="infoTitle" style="color: var(--primary);"></h2>
+            <p id="infoDesc" style="font-size: 14px; color: #4b5563; line-height: 1.7;"></p>
+            <button class="btn-p" onclick="closeM('infoModal')">Got it</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="enquiryModal" onclick="closeM('enquiryModal')">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <div class="handle"></div>
+            <h2>Admission Enquiry</h2>
+            <input type="text" class="input-f" placeholder="Student Name">
+            <input type="tel" class="input-f" placeholder="Mobile Number">
+            <select class="input-f">
+                <option>Select Class</option>
+                <option>Nursery-UKG</option>
+                <option>Class 1-8</option>
+                <option>Class 9-12</option>
+            </select>
+            <button class="btn-p" style="background:var(--accent)" onclick="alert('Enquiry Sent!')">Submit
+                Enquiry</button>
+        </div>
+    </div>
+
+    <!-- developer card -->
+    <div class="modal-overlay" id="devModal" onclick="closeM('devModal')">
+        <div class="modal-box dev-premium-bg" onclick="event.stopPropagation()">
+            <div class="handle glass-handle"></div>
+
+            <div class="dev-card-wrapper">
+                <div class="dev-header">
+                    <div class="dev-avatar-glow">
+                        <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="AR Maurya">
+                    </div>
+                    <h2 class="dev-title">AR Maurya</h2>
+                    <p class="dev-subtitle">Full Stack Developer & MCA Student</p>
+                </div>
+
+                <div class="dev-chips">
+                    <span class="chip">MCA 2nd Sem</span>
+                    <span class="chip">UI/UX Expert</span>
+                    <span class="chip">JS Dev</span>
+                </div>
+
+                <div class="dev-bio-box">
+                    <p>Hello! I am a passionate developer currently pursuing my **Master of Computer Applications**.
+                        I
+                        specialize in creating high-performance, glassmorphism-themed web applications like this
+                        school
+                        portal.</p>
+                </div>
+
+                <div class="dev-actions">
+                    <a href="https://github.com" target="_blank" class="dev-btn github">GitHub</a>
+                    <a href="mailto:alok.r.maurya@zohomail.in" class="dev-btn email">Contact Me</a>
+                </div>
+            </div>
+
+            <button class="btn-p" onclick="closeM('devModal')"
+                style="margin-top: 20px; background: rgba(255,255,255,0.2);">Close Profile</button>
+        </div>
+    </div>
+
+    <!-- social media card -->
+    <div class="modal-overlay" id="socialModal" onclick="closeM('socialModal')">
+        <div class="modal-box social-modal-ux" onclick="event.stopPropagation()">
+            <div class="handle"></div>
+            <h2 style="color: var(--primary); text-align: center; margin-bottom: 25px;">Connect with School</h2>
+
+            <div class="social-grid-modal">
+                <a href="https://facebook.com" target="_blank" class="social-tile fb-bg">
+                    <div class="s-icon">f</div>
+                    <span>Facebook</span>
+                </a>
+
+                <a href="https://instagram.com" target="_blank" class="social-tile ig-bg">
+                    <div class="s-icon">ig</div>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://wa.me/919876543210" target="_blank" class="social-tile wa-bg">
+                    <div class="s-icon">wa</div>
+                    <span>WhatsApp</span>
+                </a>
+
+                <a href="https://youtube.com" target="_blank" class="social-tile yt-bg">
+                    <div class="s-icon">yt</div>
+                    <span>YouTube</span>
+                </a>
+            </div>
+
+            <button class="btn-p" onclick="closeM('socialModal')"
+                style="margin-top: 25px; background: #f1f5f9; color: #333;">Close</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    </body>
+
+</html>
